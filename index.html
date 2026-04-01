@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>WorldPulse – Privacy Policy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --red: #FF2D2D;
+      --dark-red: #CC0000;
+      --cyan: #00E5FF;
+      --dark-cyan: #00B8CC;
+      --dark: #080C14;
+      --darker: #050810;
+      --card: #0D1521;
+      --card2: #111C2E;
+      --border: rgba(0,229,255,0.15);
+      --text: #CBD8E8;
+      --muted: #4A6080;
+      --yellow: #FFD700;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background-color: var(--darker);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    /* GRID BACKGROUND */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(0,229,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,229,255,0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* HEADER */
+    header {
+      position: relative;
+      background: linear-gradient(180deg, #0A0F1E 0%, var(--darker) 100%);
+      border-bottom: 1px solid var(--border);
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--red), var(--cyan), var(--red));
+      background-size: 200% 100%;
+      animation: shimmer 4s linear infinite;
+    }
+
+    @keyframes shimmer {
+      0% { background-position: -200% 0; }
+      100% { background-position: 200% 0; }
+    }
+
+    .header-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 40px 24px 32px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .globe-icon {
+      width: 64px;
+      height: 64px;
+      flex-shrink: 0;
+      animation: pulse-glow 3s ease-in-out infinite;
+    }
+
+    @keyframes pulse-glow {
+      0%, 100% { filter: drop-shadow(0 0 8px rgba(0,229,255,0.4)); }
+      50% { filter: drop-shadow(0 0 20px rgba(0,229,255,0.8)); }
+    }
+
+    .header-text h1 {
+      font-family: 'Orbitron', monospace;
+      font-size: clamp(18px, 4vw, 32px);
+      font-weight: 900;
+      color: #fff;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .header-text h1 span {
+      color: var(--cyan);
+    }
+
+    .header-text .sub {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 6px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    .header-scan {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+      opacity: 0.5;
+    }
+
+    /* CONTAINER */
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 48px 24px 100px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* UPDATED DATE */
+    .updated {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 6px 14px;
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 32px;
+      font-weight: 600;
+    }
+
+    .updated::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--cyan);
+      animation: blink 1.5s ease-in-out infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.2; }
+    }
+
+    /* INTRO CARD */
+    .intro-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--cyan);
+      border-radius: 8px;
+      padding: 24px 28px;
+      margin-bottom: 48px;
+    }
+
+    /* SECTION HEADERS */
+    h2 {
+      font-family: 'Orbitron', monospace;
+      font-size: clamp(9px, 1.4vw, 11px);
+      color: var(--cyan);
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--red);
+      padding: 14px 20px;
+      margin: 48px 0 20px;
+      border-radius: 0 6px 6px 0;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    h3 {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--cyan);
+      margin: 24px 0 12px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      opacity: 0.8;
+    }
+
+    p {
+      color: var(--text);
+      margin-bottom: 14px;
+    }
+
+    strong {
+      color: #fff;
+      font-weight: 600;
+    }
+
+    a {
+      color: var(--cyan);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(0,229,255,0.3);
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    a:hover {
+      color: #fff;
+      border-color: var(--cyan);
+    }
+
+    /* LISTS */
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 14px;
+    }
+
+    ul li {
+      padding: 9px 12px 9px 36px;
+      position: relative;
+      color: var(--text);
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+
+    ul li::before {
+      content: '▸';
+      position: absolute;
+      left: 12px;
+      color: var(--cyan);
+      font-size: 13px;
+    }
+
+    /* SUMMARY BLOCK */
+    .summary-block {
+      background: linear-gradient(135deg, var(--card) 0%, var(--card2) 100%);
+      border: 1px solid rgba(0,229,255,0.2);
+      border-radius: 8px;
+      padding: 20px 24px;
+      margin-bottom: 10px;
+    }
+
+    .summary-block ul li::before {
+      content: '◆';
+      color: var(--red);
+      font-size: 8px;
+      top: 13px;
+    }
+
+    /* ALERT BOX */
+    .alert-box {
+      background: rgba(255,45,45,0.06);
+      border: 1px solid rgba(255,45,45,0.25);
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin: 16px 0;
+    }
+
+    .alert-box p {
+      color: #FFB3B3;
+      margin: 0;
+      font-size: 14px;
+    }
+
+    /* CONTACT BOX */
+    .contact-box {
+      background: var(--card2);
+      border: 1px solid rgba(0,229,255,0.25);
+      border-radius: 8px;
+      padding: 24px 28px;
+      margin-top: 10px;
+    }
+
+    /* CATEGORIES GRID */
+    .categories-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 12px;
+      margin: 16px 0;
+    }
+
+    .cat-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 12px 16px;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .cat-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* FOOTER */
+    footer {
+      margin-top: 80px;
+      border-top: 1px solid var(--border);
+      padding-top: 24px;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    footer p {
+      font-family: 'Orbitron', monospace;
+      font-size: 9px;
+      color: var(--muted);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .footer-line {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border), transparent);
+      margin: 16px auto;
+      max-width: 300px;
+    }
+
+    @media (max-width: 500px) {
+      .header-inner { padding: 28px 16px 24px; gap: 16px; }
+      .container { padding: 32px 16px 60px; }
+      .categories-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="globe-icon">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <!-- Globe circle -->
+        <circle cx="50" cy="50" r="44" fill="none" stroke="#00E5FF" stroke-width="2" opacity="0.3"/>
+        <circle cx="50" cy="50" r="44" fill="none" stroke="#00E5FF" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.5"/>
+        <!-- Meridians -->
+        <ellipse cx="50" cy="50" rx="20" ry="44" fill="none" stroke="#00E5FF" stroke-width="1.5" opacity="0.6"/>
+        <ellipse cx="50" cy="50" rx="38" ry="44" fill="none" stroke="#00E5FF" stroke-width="1" opacity="0.3"/>
+        <!-- Equator -->
+        <line x1="6" y1="50" x2="94" y2="50" stroke="#00E5FF" stroke-width="1.5" opacity="0.6"/>
+        <line x1="6" y1="33" x2="94" y2="33" stroke="#00E5FF" stroke-width="1" opacity="0.3"/>
+        <line x1="6" y1="67" x2="94" y2="67" stroke="#00E5FF" stroke-width="1" opacity="0.3"/>
+        <!-- Center dot -->
+        <circle cx="50" cy="50" r="4" fill="#00E5FF" opacity="0.9"/>
+        <!-- Pulse rings -->
+        <circle cx="50" cy="50" r="44" fill="none" stroke="#FF2D2D" stroke-width="1" stroke-dasharray="6 94" opacity="0.6"/>
+        <!-- Location pins -->
+        <circle cx="30" cy="38" r="3" fill="#FF2D2D" opacity="0.8"/>
+        <circle cx="65" cy="55" r="3" fill="#FFD700" opacity="0.8"/>
+        <circle cx="45" cy="68" r="3" fill="#00E5FF" opacity="0.8"/>
+      </svg>
+    </div>
+    <div class="header-text">
+      <h1>World<span>Pulse</span></h1>
+      <div class="sub">Privacy Policy — Global Intelligence Platform</div>
+    </div>
+  </div>
+  <div class="header-scan"></div>
+</header>
+
+<div class="container">
+
+  <p class="updated">Last updated: April 1, 2026</p>
+
+  <div class="intro-card">
+    <p>
+      This privacy notice for <strong>WorldPulse</strong> ("we," "us," or "our") explains how we collect, use, disclose, and safeguard your information when you use our mobile application and real-time global intelligence platform. WorldPulse tracks earthquakes, wildfires, floods, volcanoes, storms, armed conflicts, civil unrest, and breaking news — all on one live interactive map.
+    </p>
+    <p style="margin-bottom:0;">
+      Please read this policy carefully. If you disagree with its terms, please discontinue use of the app.
+    </p>
+  </div>
+
+  <h2>Summary of Key Points</h2>
+  <div class="summary-block">
+    <ul>
+      <li>We collect device identifiers and purchase data primarily through RevenueCat to manage your subscription.</li>
+      <li>We do <strong>not</strong> sell your personal data to third parties or use it for advertising.</li>
+      <li>We use trusted, authoritative data sources: USGS, NASA EONET, GDACS, ReliefWeb, and BBC World News.</li>
+      <li>You may request deletion of your data at any time by contacting us.</li>
+      <li>We do not knowingly collect data from users under 18 years of age.</li>
+    </ul>
+  </div>
+
+  <h2>1. What Information Do We Collect?</h2>
+
+  <h3>Data Collected Automatically</h3>
+  <ul>
+    <li><strong>Device ID</strong> — Used by RevenueCat to identify your device for subscription management.</li>
+    <li><strong>User ID</strong> — A RevenueCat-assigned identifier to link your account with your subscription status.</li>
+    <li><strong>Purchase & Subscription History</strong> — Records of your WorldPulse Pro subscription (Weekly, Monthly, or Yearly), processed via Apple App Store and RevenueCat.</li>
+    <li><strong>Product Interaction Data</strong> — Anonymized data about how you use the app (e.g., map interactions, category filters selected, feature usage) to improve the platform.</li>
+    <li><strong>Crash & Performance Data</strong> — Technical diagnostics including crash logs, launch times, and performance metrics to ensure app stability.</li>
+    <li><strong>IP Address & Device Type</strong> — Standard technical data transmitted when connecting to external data APIs (USGS, NASA, GDACS, BBC).</li>
+  </ul>
+
+  <h3>Data You Provide</h3>
+  <ul>
+    <li>WorldPulse does <strong>not</strong> currently require account registration or login.</li>
+    <li>If you contact our support team, we may collect your email address and the content of your message solely to respond to your inquiry.</li>
+  </ul>
+
+  <h3>Location Data</h3>
+  <div class="alert-box">
+    <p>⚠️ WorldPulse does <strong>not</strong> actively collect or store your GPS location. The live map displays global events using fixed geographic coordinates from our data sources — your personal location is not required or transmitted.</p>
+  </div>
+
+  <h3>Payment Information</h3>
+  <p>All payments are processed directly through the Apple App Store. We do <strong>not</strong> have access to your payment card details, bank information, or billing address. RevenueCat receives only confirmation of your subscription status.</p>
+
+  <h2>2. Event Categories We Monitor</h2>
+  <p>WorldPulse aggregates data from trusted public sources across 8 real-time event categories:</p>
+  <div class="categories-grid">
+    <div class="cat-item"><div class="cat-dot" style="background:#FF2D2D;"></div>Conflicts</div>
+    <div class="cat-item"><div class="cat-dot" style="background:#FF6B00;"></div>Civil Unrest</div>
+    <div class="cat-item"><div class="cat-dot" style="background:#FF9500;"></div>Earthquakes</div>
+    <div class="cat-item"><div class="cat-dot" style="background:#FF5500;"></div>Wildfires</div>
+    <div class="cat-item"><div class="cat-dot" style="background:#0099FF;"></div>Floods</div>
+    <div class="cat-item"><div class="cat-dot" style="background:#CC00FF;"></div>Volcanoes</div>
+    <div class="cat-item"><div class="cat-dot" style="background:#00CCFF;"></div>Storms</div>
+    <div class="cat-item"><div class="cat-dot" style="background:#00E5FF;"></div>Breaking News</div>
+  </div>
+  <p>This data originates from public APIs (USGS, NASA EONET, GDACS, ReliefWeb, BBC) and does not involve collection of your personal information.</p>
+
+  <h2>3. How Do We Use Your Information?</h2>
+  <ul>
+    <li>To verify and manage your WorldPulse Pro subscription status</li>
+    <li>To unlock premium features (Conflicts, Unrest, ReliefWeb reports) for Pro subscribers</li>
+    <li>To improve app performance and fix technical issues</li>
+    <li>To analyze aggregate usage patterns and plan new features</li>
+    <li>To respond to customer support inquiries</li>
+    <li>To comply with legal obligations</li>
+  </ul>
+
+  <h2>4. Third-Party Services</h2>
+  <p>We use the following trusted third-party services that may process data on our behalf:</p>
+  <ul>
+    <li><strong>RevenueCat</strong> — Subscription and in-app purchase management. Collects Device ID, User ID, and purchase history. <a href="https://www.revenuecat.com/privacy" target="_blank">RevenueCat Privacy Policy →</a></li>
+    <li><strong>Apple App Store</strong> — Payment processing and subscription verification.</li>
+    <li><strong>USGS Earthquake Hazards Program</strong> — Public seismic data API.</li>
+    <li><strong>NASA EONET</strong> — Natural event tracking API (wildfires, etc.).</li>
+    <li><strong>GDACS</strong> — Global disaster alerting data (floods, etc.).</li>
+    <li><strong>ReliefWeb (UN)</strong> — Humanitarian intelligence reports (Pro only).</li>
+    <li><strong>BBC World News</strong> — Breaking news feed.</li>
+  </ul>
+  <p>We do <strong>not</strong> integrate advertising networks, analytics SDKs that track users across apps, or data brokers.</p>
+
+  <h2>5. Legal Bases for Processing (GDPR)</h2>
+  <p>If you are located in the European Economic Area (EEA), United Kingdom, or Turkey, we process your data based on:</p>
+  <ul>
+    <li><strong>Performance of a contract</strong> — To deliver your WorldPulse Pro subscription</li>
+    <li><strong>Legitimate interests</strong> — To improve app stability and performance</li>
+    <li><strong>Legal obligations</strong> — To comply with applicable laws</li>
+    <li><strong>Your consent</strong> — Where explicitly required</li>
+  </ul>
+
+  <h2>6. When Do We Share Your Information?</h2>
+  <p>We do <strong>not</strong> sell your personal data. We may share data only in these limited circumstances:</p>
+  <ul>
+    <li><strong>Service providers</strong> — RevenueCat, as described above, to manage subscriptions</li>
+    <li><strong>Legal requirements</strong> — When required by law, court order, or governmental authority</li>
+    <li><strong>Business transfers</strong> — In the event of a merger, acquisition, or sale of assets</li>
+    <li><strong>Fraud prevention</strong> — To detect and prevent fraudulent transactions</li>
+  </ul>
+
+  <h2>7. Data Retention</h2>
+  <p>We retain your data only as long as necessary to provide our services or as required by law. Subscription records managed by RevenueCat are retained in accordance with their data retention policy. Anonymized usage and diagnostic data may be retained for up to 12 months.</p>
+
+  <h2>8. How Do We Keep Your Information Safe?</h2>
+  <p>We implement industry-standard security measures including encrypted data transmission (HTTPS/TLS), access controls, and regular security reviews. However, no system is completely secure and we cannot guarantee absolute security of your information.</p>
+
+  <h2>9. Do We Collect Data from Minors?</h2>
+  <p>WorldPulse is not directed at children under the age of 18. We do not knowingly collect personal information from minors. If you believe a minor has provided us with personal data, please contact us and we will take steps to delete such information.</p>
+
+  <h2>10. Your Privacy Rights</h2>
+  <p>Depending on your location, you may have the right to:</p>
+  <ul>
+    <li>Access the personal data we hold about you</li>
+    <li>Request correction of inaccurate data</li>
+    <li>Request deletion of your data</li>
+    <li>Withdraw consent at any time</li>
+    <li>Data portability (receive your data in a structured format)</li>
+    <li>Lodge a complaint with your local data protection authority</li>
+  </ul>
+
+  <h2>11. Data Deletion</h2>
+  <p>To request deletion of your data, please contact us at the email address below. We will process your request within 30 days. Note that some data may need to be retained for legal compliance purposes.</p>
+
+  <h2>12. Cookies and Tracking Technologies</h2>
+  <p>The WorldPulse mobile app does not use browser cookies. Standard mobile identifiers (Device ID) are used solely for subscription management as described above. We do not use cross-app tracking technologies or advertising identifiers (IDFA) for ad targeting.</p>
+
+  <h2>13. Do-Not-Track</h2>
+  <p>As WorldPulse does not engage in cross-site tracking, Do-Not-Track signals are not applicable to our services.</p>
+
+  <h2>14. US Privacy Rights</h2>
+  <p>If you are a US resident, you may request access, correction, or deletion of your personal data by contacting us. We do not sell personal information as defined under the California Consumer Privacy Act (CCPA) or similar state laws.</p>
+
+  <h2>15. Updates to This Policy</h2>
+  <p>We may update this privacy policy from time to time. We will notify you of material changes by updating the "Last updated" date at the top of this document. We encourage you to review this policy periodically.</p>
+
+  <h2>16. Contact Us</h2>
+  <div class="contact-box">
+    <p>Have questions, concerns, or requests regarding your privacy?</p>
+    <br/>
+    <p>📧 Email: <a href="mailto:worldpulseapp@gmail.com">worldpulseapp@gmail.com</a></p>
+    <br/>
+    <p style="color: var(--muted); font-size: 13px;">We aim to respond to all privacy inquiries within 5 business days.</p>
+  </div>
+
+  <footer>
+    <div class="footer-line"></div>
+    <p>© 2026 WorldPulse &nbsp;·&nbsp; All Rights Reserved &nbsp;·&nbsp; Global Intelligence Platform</p>
+    <div class="footer-line"></div>
+  </footer>
+
+</div>
+
+</body>
+</html>
